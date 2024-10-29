@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="input-group BodyWeb">
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*" class="ml-20">
+</div>
+{% endblock %}
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='Script.js') }}"></script>
+    {% endblock %}

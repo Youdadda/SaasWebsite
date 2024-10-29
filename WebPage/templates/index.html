@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="Pageintegre">
+    <div class="BodyWeb Displaying" id="BodyWeb">
+        <h2 class="Landing">Welcome to Life of practical and useful <strong class="CoolTexts">AI</strong></h2>
+        <div>
+            <ul class="ServButtons">
+                <li><a href="{{ url_for('Transaltion') }}" class="button">English to French voice translation</a></li>
+                <li><a href="{{ url_for('forecasting') }}" class="button">Forecasting your Favorite Stock market</a></li>
+                <li><a href="{{ url_for('Style') }}" class="button">Paint the world with the style of your favorite painter</a></li>
+                
+            </ul>
+            
+        </div>
+        <p>And so much more.......</p>
+    </div>
+</div>
+{% endblock %}
+
