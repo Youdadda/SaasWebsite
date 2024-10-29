@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="input-group BodyWeb">
+    <label for="transaltion" class="input-label">Enter the text you want to translate</label>
+    <input type="text" id="transaltion" class="input-field" placeholder="Text">
+</div>
+{% endblock %}
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='Script.js') }}"></script>
+    {% endblock %}

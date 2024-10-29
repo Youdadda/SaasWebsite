@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Danfo&family=Londrina+Sketch&family=Pacifico&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="input-group BodyWeb">
+    <form action="{{ url_for('forecasting') }}" method="post">
+        <div class="input-group">
+            <label for="Stockname" class="input-label">Stock Name</label>
+            <input type="text" id="Stockname" name="Stockname" class="input-field" placeholder="Your favorite stock!">
+        </div>
+        <button type="submit">Get Stock Info</button>
+    </form>
+    {% if result %}
+    <div class="result">
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</div>
+<footer class='footer'>
+    <p class="marketing">Let Our well suited models give you market insights with the click of a button!</p>
+</footer>
+{% endblock %}
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='Script.js') }}"></script>
+    {% endblock %}
