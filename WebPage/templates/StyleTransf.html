@@ -6,10 +6,18 @@
 
 {% block content %}
 <div class="input-group BodyWeb">
-    <label for="img">Select image:</label>
-    <input type="file" id="img" name="img" accept="image/*" class="ml-20">
+    <form action="/Style" method="POST" enctype="multipart/form-data">  <!-- Add form tag -->
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="file" class="Painting">  <!-- Ensure name is 'file' -->
+        <button type="submit" class="Painting">Paint</button>
+    </form>  <!-- Close form tag -->
+</div>
+<div>
+    {{Output}}
 </div>
 {% endblock %}
 {% block extra_js %}
     <script src="{{ url_for('static', filename='Script.js') }}"></script>
     {% endblock %}
+
+

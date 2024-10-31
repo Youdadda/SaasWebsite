@@ -76,3 +76,22 @@
     transform: scale(1);
   }
 }
+.Painting {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for button */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Inline-block for button */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin around button */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect */
+.Painting:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
