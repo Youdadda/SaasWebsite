@@ -55,3 +55,24 @@
   font-style: normal;
   color:#a5633a;
 }
+.result{
+  margin : 2rem;
+  display:flex;
+  flex-direction: column;
+  color: #E30065;
+  animation: pulse 1.5s infinite; /* Added animation */
+  text-shadow: 0 0 5px #E30065, 0 0 10px #E30065; /* Added glowing effect */
+}
+
+/* New keyframes for pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

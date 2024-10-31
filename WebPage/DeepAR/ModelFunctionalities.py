@@ -9,7 +9,7 @@ import yfinance as yf
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, ELU
-
+import matplotlib.pyplot as plt
 
 
 def SMA(data, window_size):

@@ -39,7 +39,7 @@ def forecasting():
 
                     # Compare with the last known price
                     last_known_price = data['Close'].iloc[-1]
-                    return render_template("Forecasting.html", result=f"Last known price: {last_known_price:.2f}\n Predicted change: {next_day_price - last_known_price:.2f}")
+                    return render_template("Forecasting.html", result=f"Last known price: {last_known_price:.2f} $", rES = f"Predicted change: {next_day_price - last_known_price:.2f}$")
                 except Exception as e:
                     print("Error occurred:", str(e))
                     print("latest_data:", latest_data)
