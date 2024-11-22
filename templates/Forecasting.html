@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecasting</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='Forecasting.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+<div class="marketing">
+    <p>
+        Laissez nos modèles bien adaptés vous donner un aperçu du marché en un seul clic !</p>
+</div>
+<div class="forecasting">
+    <h2>Stock Market Forecasting</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="Stockname">Enter Stock Ticker:</label>
+            <input type="text" id="Stockname" name="Stockname" required>
+        </div>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+
+    <div class="result">
+        <p>{{ result }}</p>
+        <p>{{ rES }}</p>
+    </div>
+
+    <div class="error">
+        <p>{{ error }}</p>
+    </div>
+
+</div>
+    <script src="ScriptTest.js"></script>
+</head>
