@@ -33,7 +33,7 @@ def StyleTransfer():
                 file.save(filepath)
                 paths.append(filepath)
         
-        # Pass the image paths to the template
+        
         return render_template("StyleTransfer.html", object_image=paths[0], style_image=paths[1])
     
     return render_template("StyleTransfer.html")
