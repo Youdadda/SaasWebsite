@@ -114,6 +114,11 @@ html, body {
     align-items: center;
     color: white;
     max-width: 800px;
+    animation: pulse 1.5s infinite; /* Added animation */
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .result img {
@@ -122,6 +127,11 @@ html, body {
     border: 2px solid white;
     border-radius: 8px;
     margin-top: 1rem;
+}
+
+.result h3 {
+    color: white;
+    margin-bottom: 1rem;
 }
 
 .error {
@@ -149,7 +159,3 @@ html, body {
     padding-bottom: 2rem;
     min-height: 100vh;
 }
-
-.result{
-    animation: pulse 1.5s infinite; /* Added animation */
-  }

@@ -52,14 +52,15 @@
                         <img src="#" alt="Style Image" id="style-image" style="display: none;">
                     </div>
                 </div>
-                <input type="submit" value="Upload">
-
-                <div class="result">
-                    <h3>Result:</h3>
-                    <img src="{{ url_for('static', filename='output.jpg') }}" alt="Styled Image">
-                </div>
-        
+                <input type="submit" value="Generate Style Transfer">
             </form>
+            
+            {% if result %}
+            <div class="result">
+                <h3>Result:</h3>
+                <img src="{{ url_for('static', filename='Output.jpg') }}" alt="Styled Image">
+            </div>
+            {% endif %}
         </div>
     </div>
 </body>
