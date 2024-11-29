@@ -4,9 +4,7 @@ import yfinance as yf
 from datetime import datetime, timedelta
 from DeepAR.ModelFunctionalities import *
 import os
-
-#StyleTransfer function should be renamed because it has the same name as the endpoint
-#from S.src.models.style_transfer import styleTransfer
+from S.src.models.style_transfer import StyleTransfer
 
 
 app = Flask(__name__)
@@ -23,18 +21,18 @@ def index():
 
 
 ####################### StyleTransfer ############################
-"""
+
 def make_prediction(content_image_path, style_image_path, output_image_path, learning_rate=5.0, style_weight=10, content_weight=1e3, epochs=3000):
-    transfer = styleTransfer(
+    transfer = StyleTransfer(
         content_image_path, style_image_path, output_image_path,
         learning_rate, style_weight, content_weight, epochs
     )
 
     history = transfer.run_style_transfer()
     return history
-"""
-@app.route("/StyleTransfer", methods=["POST", "GET"])
-def StyleTransfer():
+
+@app.route("/ImageTransfer", methods=["POST", "GET"])
+def ImageTransfer():
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
@@ -56,13 +54,13 @@ def StyleTransfer():
         # Ensure we have exactly two paths and run style transfer
         if len(paths) == 2:
             output_path = 'static/Output.jpg'
-            #make_prediction(paths[0], paths[1], output_path)
-            return render_template('StyleTransfer.html', result=True)
+            make_prediction(paths[0], paths[1], output_path)
+            return render_template('ImageTransfer.html', result=True)
         else:
             flash('Error in saving files')
             return redirect(request.url)
             
-    return render_template('StyleTransfer.html')
+    return render_template('ImageTransfer.html')
 
 
 
@@ -71,7 +69,7 @@ def StyleTransfer():
 
 
 @app.route("/Forecasting", methods=["GET", "POST"])
-def forecasting():
+def Forecasting():
     if request.method == 'POST':
         stock_name = request.form.get("Stockname").upper()
         if stock_name:

@@ -26,10 +26,13 @@
         <p>{{ result }}</p>
         <p>{{ rES }}</p>
     </div>
-
+    {% if error %}
     <div class="error">
-        <p>{{ error }}</p>
+        
+            <p>{{ error }}</p>
+        
     </div>
+    {% endif %}
 
 </div>
     <script src="ScriptTest.js"></script>
